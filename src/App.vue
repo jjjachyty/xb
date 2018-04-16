@@ -27,6 +27,26 @@ export default {
 </script>
 
 <style>
+body{
+position: relative; overflow: hidden;
+}
+
+.application, .application--wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+}
+.container {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 100%;
+    flex: 1 1 100%;
+    margin: auto;
+    padding: 0 16px 0 16px;
+    width: 100%;
+}
+
+
 .appbar{
   position:fixed;
   bottom: 0px;

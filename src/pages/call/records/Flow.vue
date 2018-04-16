@@ -1,5 +1,6 @@
 <template>
 <v-app>
+    <v-container>
     <v-card>
         <v-layout row wrap>
     
@@ -83,7 +84,37 @@
 
 
     </v-card>
+</v-container>
+        <v-bottom-nav  app dark fixed :value="true" :active.sync="e1" color="transparent">
+      <v-btn flat  value="setting" class="setting" @click="getSetting">
+        <span>获取设置</span>
+        <v-icon>settings</v-icon>
+      </v-btn>
+      <v-btn flat color="white" value="cancel" class="cancel">
+        <span>保存并挂断</span>
+        <v-icon>call</v-icon>
+      </v-btn>
+      <v-btn flat color="white"  class="savle" value="save">
+        <span>保存</span>
+        <v-icon>save</v-icon>
+      </v-btn>
+    </v-bottom-nav>
 
+
+    <v-bottom-sheet v-model="dialog">
+      <v-list>
+        <v-subheader>首拨设置</v-subheader>
+        <v-container>
+         <v-layout>
+             <v-flex>
+                 <v-btn>获取预约设置</v-btn>     <v-btn>获取跟进数据</v-btn>
+             </v-flex>
+         </v-layout>
+         </v-container>
+                <v-subheader>数据设置</v-subheader>
+
+      </v-list>
+    </v-bottom-sheet>
 
 
 
@@ -96,15 +127,44 @@
             return {
                 appointment: "1",
                 openNotice: true,
-                step:3
+                step:3,
+                e1:'',
+                setting:'',
+                dialog:false
             };
+        },methods:{
+            getSetting(){
+                this.dialog= true
+            }
         }
     };
 </script>
 <style lang="postcss">
 .stepper:not(.stepper--vertical) .stepper__label {
-    display: block;
+    display: block!important;
+}
+
+</style>
+<style lang="css" scoped>
+.cancel{
+  background-color:#EF6C00 !important;
+}
+.bottom-nav .btn {
+  width: 100%;
+  max-width:100%;
+}
+.bottom-nav .btn:not(.btn--active) {
+    -webkit-filter: none;
+    filter: none;
+        opacity: 1;
+}
+.savle{
+    background-color:#039BE5 !important;
+}
+.setting{
+    background-color:white !important;
 }
 </style>
+
 
 

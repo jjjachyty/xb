@@ -1,4 +1,6 @@
-<template style="position: relative; overflow: hidden;">
+<template>
+<v-app>
+<v-container>
 <v-layout row wrap="">
             <v-flex xs12 xm12>
             <v-card>
@@ -29,10 +31,11 @@
             </v-card>
             </v-flex>
 
-                  <router-view/>
 
 </v-layout>
-    
+</v-container>
+                      <router-view/>
+</v-app>
 </template>
 <script>
 export default {

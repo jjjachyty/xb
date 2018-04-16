@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <v-container>
     <v-toolbar fixed>
       <v-toolbar-title>
         <v-icon color="green">keyboard_arrow_left</v-icon>
@@ -12,7 +13,6 @@
   <br>
   <br>
   <br>
-    <v-container >
   
       <v-card dark color="light-blue lighten-1" class="userinfo">
         <v-card-text>
@@ -76,24 +76,10 @@
     
   </v-tabs>
 
+</v-container>
       
       <router-view/>
-    </v-container>
 
-        <v-bottom-nav v-if="flow == 1" app dark fixed :value="true" :active.sync="e1" color="transparent">
-      <v-btn flat  value="setting" class="setting">
-        <span>获取设置</span>
-        <v-icon>settings</v-icon>
-      </v-btn>
-      <v-btn flat color="white" value="cancel" class="cancel">
-        <span>保存并挂断</span>
-        <v-icon>call</v-icon>
-      </v-btn>
-      <v-btn flat color="white"  class="savle" value="save">
-        <span>保存</span>
-        <v-icon>save</v-icon>
-      </v-btn>
-    </v-bottom-nav>
 
 
   </v-app>
@@ -114,21 +100,5 @@ export default {
 .userinfo{
   border-radius: 30px;
   background: linear-gradient(to left, #29b6e1, #29b6f6);
-}
-.cancel{
-  background-color:#EF6C00 !important;
-}
-.bottom-nav .btn {
-  width: 100%;
-  max-width:100%;
-}
-.bottom-nav .btn:not(.btn--active) {
-    -webkit-filter: none;
-    filter: none;
-        opacity: 1;
-}
-.savle{
-    background-color:#039BE5 !important;
-
 }
 </style>
